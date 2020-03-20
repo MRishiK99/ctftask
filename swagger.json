@@ -1,0 +1,623 @@
+{
+    "openapi" : "3.0.1",
+    "info" : {
+      "title" : "BidApi",
+      "description" : "BidApi",
+      "version" : "0.1"
+    },
+    "servers" : [ {
+      "url" : "http://localhost:3000"
+    } ],
+    "paths" : {
+      "/admin/addProd" : {
+        "post" : {
+          "description" : "Route to add product",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"name\":\"Ball\",\"price\":12,\"starttime\":1584687598000,\"endtime\":1584773997000}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "400" : {
+              "description" : "response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/admin/listProd" : {
+        "get" : {
+          "description" : "List out available products",
+          "responses" : {
+            "200" : {
+              "description" : "List of products",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/forgotPwd" : {
+        "post" : {
+          "description" : "Route to reset password",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_1"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"email\":\"mohanrishikesav@gmail.com\",\"pwd\":\"GreatGod1\"}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Resp message",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/admin/updateProd" : {
+        "post" : {
+          "description" : "Update a product",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_2"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"pid\": \"ShVP684S7\",\"name\":\"Ball\",\"price\":13,\"start\":1584688250000,\"end\":1584773997000}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/mybuys" : {
+        "get" : {
+          "description" : "List of successful bids",
+          "responses" : {
+            "200" : {
+              "description" : "List of successful bids",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/admin/delProd" : {
+        "post" : {
+          "description" : "Delete a particular product",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_3"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"pid\": \"PzoRW5e0v\"}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/listProd" : {
+        "post" : {
+          "description" : "List all poducts",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_4"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"pid\": \"ShVP684S7\",\"price\":13}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "404" : {
+              "description" : "List all products",
+              "content" : {
+                "text/html; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/mybids" : {
+        "get" : {
+          "description" : "List of user's bids",
+          "responses" : {
+            "200" : {
+              "description" : "List of user's bids",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/bid" : {
+        "post" : {
+          "description" : "Initiate a bid",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_5"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"pid\": \"ShVP684S7\",\"price\":13}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/login" : {
+        "post" : {
+          "description" : "User login",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_6"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"email\":\"mohanrishikesav@gmail.com\",\"pwd\":\"GreatGod1\"}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/listbid" : {
+        "get" : {
+          "description" : "List bids for a product",
+          "parameters" : [ {
+            "name" : "pid",
+            "in" : "query",
+            "required" : false,
+            "style" : "form",
+            "explode" : true,
+            "schema" : {
+              "type" : "string"
+            },
+            "example" : "ShVP684S7"
+          } ],
+          "responses" : {
+            "default" : {
+              "description" : "Auto generated using Swagger Inspector"
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/register" : {
+        "post" : {
+          "description" : "Register for account",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_7"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"name\":\"rishi\",\"email\":\"mohanrisikesav@gmail.com\",\"phone\":8903718747,\"pwd\":\"GreatGod1\"}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/admin/getProd" : {
+        "get" : {
+          "description" : "Get Product details",
+          "parameters" : [ {
+            "name" : "pid",
+            "in" : "query",
+            "required" : false,
+            "style" : "form",
+            "explode" : true,
+            "schema" : {
+              "type" : "string"
+            },
+            "example" : "PzoRW5e0v"
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "Response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "/user/cancelbid" : {
+        "post" : {
+          "description" : "Cancel a bid",
+          "requestBody" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/body_8"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"pid\": \"ShVP684S7\",\"price\":13}"
+                  }
+                }
+              }
+            }
+          },
+          "responses" : {
+            "200" : {
+              "description" : "Response",
+              "content" : {
+                "application/json; charset=utf-8" : {
+                  "schema" : {
+                    "type" : "string"
+                  },
+                  "examples" : { }
+                }
+              }
+            }
+          },
+          "servers" : [ {
+            "url" : "http://localhost:3000"
+          } ]
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      }
+    },
+    "components" : {
+      "schemas" : {
+        "body_3" : {
+          "type" : "object",
+          "properties" : {
+            "pid" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body_4" : {
+          "type" : "object",
+          "properties" : {
+            "price" : {
+              "type" : "integer"
+            },
+            "pid" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body_1" : {
+          "type" : "object",
+          "properties" : {
+            "pwd" : {
+              "type" : "string"
+            },
+            "email" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body_2" : {
+          "type" : "object",
+          "properties" : {
+            "price" : {
+              "type" : "integer"
+            },
+            "name" : {
+              "type" : "string"
+            },
+            "start" : {
+              "type" : "number"
+            },
+            "pid" : {
+              "type" : "string"
+            },
+            "end" : {
+              "type" : "number"
+            }
+          }
+        },
+        "body" : {
+          "type" : "object",
+          "properties" : {
+            "price" : {
+              "type" : "integer"
+            },
+            "name" : {
+              "type" : "string"
+            },
+            "endtime" : {
+              "type" : "number"
+            },
+            "starttime" : {
+              "type" : "number"
+            }
+          }
+        },
+        "body_7" : {
+          "type" : "object",
+          "properties" : {
+            "phone" : {
+              "type" : "number"
+            },
+            "name" : {
+              "type" : "string"
+            },
+            "pwd" : {
+              "type" : "string"
+            },
+            "email" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body_8" : {
+          "type" : "object",
+          "properties" : {
+            "price" : {
+              "type" : "integer"
+            },
+            "pid" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body_5" : {
+          "type" : "object",
+          "properties" : {
+            "price" : {
+              "type" : "integer"
+            },
+            "pid" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body_6" : {
+          "type" : "object",
+          "properties" : {
+            "pwd" : {
+              "type" : "string"
+            },
+            "email" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "securitySchemes" : {
+        "oauth2" : {
+          "type" : "oauth2",
+          "flows" : {
+            "implicit" : {
+              "authorizationUrl" : "http://yourauthurl.com",
+              "scopes" : {
+                "scope_name" : "Enter your scopes here"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
